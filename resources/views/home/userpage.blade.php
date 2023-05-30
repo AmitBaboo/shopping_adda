@@ -61,7 +61,7 @@
         @include('home.mobile_login_reg')
         <!-- End .modal -->
     
-        @include('home.news_letter')
+       <!-- @include('home.news_letter') -->
 
         <!-- Plugins JS File -->
         @include('home.script')

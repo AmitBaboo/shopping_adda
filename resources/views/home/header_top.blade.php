@@ -34,19 +34,38 @@
                                         </div>
                                     </li>
                                     <!---<li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>-->
-                                    @if (Route::has('login'))
-                <div class="ml-5 sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+                                    @if (Route::has('login'))
+                                    @auth
+                                   
+                                    <div class="ml-5 header-dropdown">
+                                            <a href="#" style="text-transform: uppercase;">{{ auth()->user()->name }}</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="http://127.0.0.1:8000/profile">Profile</a></li>
+
+
+                                                    <form method="POST" action="http://127.0.0.1:8000/logout">  
+                                                    @csrf
+                                                    <li><a href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+                                                this.closest('form').submit();">Logout</a></li>
+                                                 </form>
+
+                                                 
+                                                 
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div>
+
+                                      
+
+
+                                    @else
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                    <li><a href="{{ route('register') }}">Register</a></li>
+                                    @endauth
+                                    @endif
+
                                 </ul>
                             </li>
                         </ul><!-- End .top-menu -->
