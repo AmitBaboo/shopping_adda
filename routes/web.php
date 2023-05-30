@@ -24,6 +24,12 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::get('/home',[HomeController::class,'redirect']);
 
+Route::get('/category',[AdminController::class,'category']);
+
+Route::post('/add_category',[AdminController::class,'add_category']);
+
+Route::post('/add_sub_category',[AdminController::class,'add_sub_category']);
+
 
 
 
