@@ -1,17 +1,67 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-         Admin panel   {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+  @include('admin.head')
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        @include('admin.sidebar')
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+          @include('admin.navbar')
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper"
+          
+          >
+            <!-- Content -->       
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+            @include('admin.main')
+             
+                
+              </div>          
             </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            @include('admin.footer')
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
         </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-</x-app-layout>
+    <!-- / Layout wrapper -->
+
+    
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    @include('admin.script')
+  </body>
+</html>
