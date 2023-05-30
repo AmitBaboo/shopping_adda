@@ -1,8 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+          <div class="demo">
+            <a href="{{url('/')}}" class="app-brand-link mt-2">
               
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Shopping Adda</span>
+              <img style="width:200px; margin-left:20px;" src="{{asset('admin_layout/assets/img/logo.png')}}" alt="logo">
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

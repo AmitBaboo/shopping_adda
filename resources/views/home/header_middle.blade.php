@@ -7,7 +7,7 @@
                         </button>
                         
                         <a href="index.html" class="logo">
-                            <img src="{{asset('frontend_layout/assets/images/demos/demo-2/logo.png')}}" alt="Molla Logo" width="105" height="25">
+                            <img src="{{asset('frontend_layout/assets/images/logo.png')}}" alt="Molla Logo" width="205" height="25">
                         </a>
                     </div><!-- End .header-left -->
 
