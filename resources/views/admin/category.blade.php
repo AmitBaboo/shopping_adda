@@ -73,9 +73,9 @@
 
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Sub Category Name</label>
-                          <input type="text" name="sub_category" class="form-control" id="basic-default-fullname" placeholder="Write here"/>
+                          <input type="text" name="sub_category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
                         </div>   
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <button type="submit" class="btn btn-outline-secondary">Add</button>
                       </form>
                     </div>
                   </div>
@@ -106,9 +106,9 @@
                       @csrf
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Category Name</label>
-                          <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" />
+                          <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
                         </div>   
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <button type="submit" class="btn btn-outline-secondary">Add</button>
                       </form>
                     </div>
                   </div>
@@ -128,6 +128,7 @@
               </div>          
             </div>
             <!-- / Content -->
+            
 
             <!-- Footer -->
             @include('admin.footer')
