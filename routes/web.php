@@ -34,6 +34,8 @@ Route::get('/show_category',[AdminController::class,'show_category']);
 
 Route::get('/delete_category/{id}',[AdminController::class,'delete_category']);
 
+Route::get('/delete_sub_category/{id}',[AdminController::class,'delete_sub_category']);
+
 
 
 

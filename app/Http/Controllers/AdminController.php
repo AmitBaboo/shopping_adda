@@ -19,15 +19,15 @@ class AdminController extends Controller
 {
 
 
-// category //
+//start category //
     public function category(){
         $data=Category::all();
         return view('admin.category',compact('data'));
     }
-// category //
+// end category //
 
     
-// add category //
+//start add main category //
   //  public function add_category(Request $request){
         
   //      $data= new category;
@@ -69,63 +69,77 @@ public function add_category(Request $request)
 
 
 
- // add category //
+ //end add main category //
 
 
 
- // add sub category //
+ // start add sub category //
 
- public function add_sub_category(Request $request){
+ //public function add_sub_category(Request $request){
         
-    $data= new sub_category;
+  //  $data= new sub_category;
 
-    $data->category_name=$request->main_category;
+ //   $data->category_name=$request->main_category;
 
-    $data->sub_category_name=$request->sub_category;
+ //   $data->sub_category_name=$request->sub_category;
 
-    $data->save();
+  //  $data->save();
 
-    return redirect()->back()->with('message','Category Added Succesfully');
+  //  return redirect()->back()->with('message','Category Added Succesfully');
+//}
+
+
+public function add_sub_category(Request $request)
+{
+    $main_category = $request->input('main_category');
+    $sub_category = $request->input('sub_category');
+  
+
+
+    // Check if the category already exists
+    $existingCategory = DB::table('sub_categories')
+        ->where('sub_category_name', $sub_category)
+        ->first();
+
+    if ($existingCategory) {
+        // Handle the case where the category already exists
+        return redirect()->back()->with('message','Sub Category already exists.');
+    }
+
+    // Add the category if it doesn't already exist
+    DB::table('sub_categories')->insert(['category_name' => $main_category,'sub_category_name' => $sub_category]);
+
+
+
+
+    // Redirect or return success response
+    // ...
+    return redirect('show_category')->with('message','Category Added Succesfully');
 }
 
 
 
-
-
-
- // add sub category //
-
+ // end add sub category //
 
 
 
 
-
-
-
-
-
-
-  // show category //
+  //start show all category //
   public function show_category(){
     $sub_category=sub_category::all();
     $category=category::all();
     return view('admin.show_category',compact('sub_category','category'));
 }
 
-    // show category //
+    // end show all category //
 
-// delete category //
+//start delete main category //
 
 //public function delete_category($id){
 //   $category=category::find($id);
 //   $category->delete();
 //   return redirect()->back();
 //}
-
-// delete category //
-
-
-
 
 function delete_category($categoryId)
 {
@@ -154,13 +168,19 @@ function delete_category($categoryId)
     }
 }
 
+// end delete main category //
 
 
 
+// start delete sub category //
 
+public function delete_sub_category($id){
+       $sub_category=sub_category::find($id);
+       $sub_category->delete();
+       return redirect()->back()->with('message','Sub Category Deleted Succesfully');
+    }
 
-
-
+// end delete sub category //
 
 
 
