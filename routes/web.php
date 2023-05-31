@@ -32,6 +32,8 @@ Route::post('/add_sub_category',[AdminController::class,'add_sub_category']);
 
 Route::get('/show_category',[AdminController::class,'show_category']);
 
+Route::get('/delete_category/{id}',[AdminController::class,'delete_category']);
+
 
 
 

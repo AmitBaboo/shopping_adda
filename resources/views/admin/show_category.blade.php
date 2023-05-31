@@ -33,8 +33,18 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
+            @if(session()->has('message'))
+      <div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+
+        {{session()->get('message')}}
+      </div>
+          @endif
+
 
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> View Category</h4>
+
+
 
               <!-- sub category Table -->
               <div class="card">
@@ -106,7 +116,7 @@
                             </button>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                              <a class="dropdown-item" href="{{url('delete_category',$category->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
