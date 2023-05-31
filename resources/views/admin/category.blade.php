@@ -35,6 +35,8 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> Add Category</h4>
+
             @if(session()->has('message'))
       <div class="alert alert-success">
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -51,7 +53,7 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Add New Sub Category</h5>
+                      <h5 class="mb-0">Create New Sub Category</h5>
                       
                     </div>
                     <div class="card-body">
@@ -98,7 +100,7 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Add New Category</h5>
+                      <h5 class="mb-0">Create New Category</h5>
                       
                     </div>
                     <div class="card-body">

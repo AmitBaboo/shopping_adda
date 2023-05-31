@@ -30,6 +30,8 @@ Route::post('/add_category',[AdminController::class,'add_category']);
 
 Route::post('/add_sub_category',[AdminController::class,'add_sub_category']);
 
+Route::get('/show_category',[AdminController::class,'show_category']);
+
 
 
 

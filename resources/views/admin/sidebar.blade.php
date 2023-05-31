@@ -38,7 +38,7 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                  <a href="{{url('show_category')}}" class="menu-link">
                     <div data-i18n="Without navbar">View Category</div>
                   </a>
                 </li>

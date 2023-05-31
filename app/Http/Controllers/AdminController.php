@@ -52,6 +52,17 @@ class AdminController extends Controller
 
  // add sub category //
 
+  // show category //
+  public function show_category(){
+    $sub_category=sub_category::all();
+    $category=category::all();
+    return view('admin.show_category',compact('sub_category','category'));
+}
+    
+
+    // show category //
+
+
 
 
 }
