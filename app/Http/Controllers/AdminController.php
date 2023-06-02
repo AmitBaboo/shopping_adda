@@ -133,6 +133,25 @@ public function add_sub_category(Request $request)
 
     // end show all category //
 
+
+    // start update main category //
+
+    public function update_category($id){
+        $category=category::find($id);
+        return view('admin.update_category',compact('category'));
+    }
+
+
+    public function update_category_confirm(Request $request,$id){
+        $category=category::find($id);
+        $category->category_name=$request->category;
+        $category->save();
+        return redirect('show_category')->with('message','Category Updated Seccessfully');
+    }
+
+    // start update main category //
+
+
 //start delete main category //
 
 //public function delete_category($id){
@@ -169,6 +188,33 @@ function delete_category($categoryId)
 }
 
 // end delete main category //
+
+
+
+
+// start update sub category //
+
+public function update_sub_category($id){
+    $data=category::all();
+    $sub_category=sub_category::find($id);
+    return view('admin.update_sub_category',compact('sub_category','data'));
+    
+}
+
+
+
+
+
+public function update_sub_category_confirm(Request $request,$id){
+    $sub_category=sub_category::find($id);
+    $sub_category->category_name=$request->main_category;
+    $sub_category->sub_category_name=$request->sub_category;
+    $sub_category->save();
+    return redirect('show_category')->with('message','Sub_Category Updated Seccessfully');
+}
+
+// start update sub category //
+
 
 
 

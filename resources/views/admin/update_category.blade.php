@@ -35,7 +35,7 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> Add Category</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> Edit Category</h4>
 
             @if(session()->has('message'))
       <div class="alert alert-success">
@@ -47,43 +47,6 @@
 
 
 
-
-          
-          <div class="row">
-                <div class="col-xl">
-                  <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Create New Sub Category</h5>
-                      
-                    </div>
-                    <div class="card-body">
-                      <form action="{{url('/add_sub_category')}}" method="POST">
-                      @csrf
-
-                      <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Select Main Category</label>
-                          
-                          <select class="form-select" name="main_category" aria-label="Default select example" required="" style="text-transform: uppercase;">
-                          <option selected="" value="">select</option>
-                          @foreach($data as $category)
-                          <option value="{{$category->category_name}}">{{$category->category_name}}</option>
-                          @endforeach
-                        </select>
-                         
-                        </div> 
-
-
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Sub Category Name</label>
-                          <input type="text" name="sub_category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
-                        </div>   
-                        <button type="submit" class="btn btn-outline-secondary">Add</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-             
-              </div>
 
 
 
@@ -100,17 +63,17 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Create New Category</h5>
+                      <h5 class="mb-0">Edit Category</h5>
                       
                     </div>
                     <div class="card-body">
-                      <form action="{{url('/add_category')}}" method="POST">
+                      <form action="{{url('/update_category_confirm',$category->id)}}" method="POST">
                       @csrf
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Category Name</label>
-                          <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
+                          <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" required="" value="{{$category->category_name}}" />
                         </div>   
-                        <button type="submit" class="btn btn-outline-secondary">Add</button>
+                        <button type="submit" class="btn btn-outline-secondary">Update</button>
                       </form>
                     </div>
                   </div>

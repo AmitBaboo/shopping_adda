@@ -32,7 +32,15 @@ Route::post('/add_sub_category',[AdminController::class,'add_sub_category']);
 
 Route::get('/show_category',[AdminController::class,'show_category']);
 
+Route::get('/update_category/{id}',[AdminController::class,'update_category']);
+
+Route::post('/update_category_confirm/{id}',[AdminController::class,'update_category_confirm']);
+
 Route::get('/delete_category/{id}',[AdminController::class,'delete_category']);
+
+Route::get('/update_sub_category/{id}',[AdminController::class,'update_sub_category']);
+
+Route::post('/update_sub_category_confirm/{id}',[AdminController::class,'update_sub_category_confirm']);
 
 Route::get('/delete_sub_category/{id}',[AdminController::class,'delete_sub_category']);
 
