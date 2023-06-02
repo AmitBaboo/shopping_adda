@@ -74,7 +74,8 @@
                             </button>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href="{{url('delete_sub_category',$sub_category->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
+                              <a class="dropdown-item" href="{{url('delete_sub_category',$sub_category->id)}}" onclick="return confirm('Are You Sure To Delete This Sub Category')">
+                                <i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
@@ -116,7 +117,8 @@
                             </button>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href="{{url('delete_category',$category->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
+                              <a class="dropdown-item" href="{{url('delete_category',$category->id)}}" onclick="return confirm('Are You Sure To Delete This Category')">
+                                <i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
