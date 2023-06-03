@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\sub_category;
+use App\Models\brand;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Validation\ValidationException;
 
@@ -228,8 +230,55 @@ public function delete_sub_category($id){
 
 // end delete sub category //
 
+// start brand  //
 
+public function brand(){
+    return view('admin.brand');
+}
 
+// end brand  //
+
+// start add brand  //
+
+public function add_brand(Request $request)
+{
+    $brandName = $request->input('brand_name');
+
+    // Check if the brand egory already exists
+    $existingbrand= DB::table('brands')
+        ->where('brand_name', $brandName)
+        ->first();
+
+    if ($existingbrand) {
+        // Handle the case where the brand already exists
+        return redirect()->back()->with('message','brand already exists.');
+    }
+
+    // Add the brand if it doesn't already exist
+
+    $image = $request->brand_image;
+    $imagename=time().'.'.$image->getClientOriginalExtension();
+    $request->brand_image->move('brand_image',$imagename);
+    
+   
+    DB::table('brands')->insert(['brand_name' => $brandName,'brand_image' => $imagename,]);
+    
+   
+
+    // Redirect or return success response
+    // ...
+    return redirect('show_brand')->with('message','brand Added Succesfully');
+}
+
+// end add brand  //
+
+// start show brand  //
+
+public function show_brand(){
+    $brand=brand::all();
+    return view('admin.show_brand',compact('brand'));
+}
+// end show brand  //
 
 
 

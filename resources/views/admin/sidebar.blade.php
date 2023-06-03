@@ -69,5 +69,31 @@
               </ul>
             </li>
 
+              <!-- Product -->
+              <li class="menu-header small text-uppercase"><span class="menu-header-text">Brand section</span></li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Brand</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{{url('brand')}}" class="menu-link">
+                    <div data-i18n="Without menu">Add brand</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{url('show_brand')}}" class="menu-link">
+                    <div data-i18n="Without navbar">View brand</div>
+                  </a>
+                </li>
+               
+              </ul>
+            </li>
+
+           
+
           </ul>
+          
         </aside>
