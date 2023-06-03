@@ -63,25 +63,26 @@
                     </thead>
 
                     <tbody class="table-border-bottom-0">
-                   
+                    @foreach($brand as $brand)
                       <tr>
-                        @foreach($brand as $brand)
+                        
                         <td> <strong>{{$brand->brand_name}}</strong></td>
-                        <td> <img style="width:150px;" src="/brand_image/{{$brand->brand_image}}" alt="brand_image"></td>
-                        @endforeach
+                        <td> <img style="width:150px;" src="/images/brand_image/{{$brand->brand_image}}" alt="brand_image"></td>
+                        
                         <td>
+                        
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href=""><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href="}" onclick="return confirm('Are You Sure To Delete This Category')">
+                              <a class="dropdown-item" href="{{url('update_brand',$brand->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <a class="dropdown-item" href="{{url('delete_brand',$brand->id)}}"onclick="return confirm('Are You Sure To Delete This Brand')">
                                 <i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
-
+                        @endforeach
                       </tr>
                       
                     </tbody>

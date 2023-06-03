@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
+
 use Illuminate\Validation\ValidationException;
 
 
@@ -258,9 +259,8 @@ public function add_brand(Request $request)
 
     $image = $request->brand_image;
     $imagename=time().'.'.$image->getClientOriginalExtension();
-    $request->brand_image->move('brand_image',$imagename);
+    $request->brand_image->move('images/brand_image',$imagename);
     
-   
     DB::table('brands')->insert(['brand_name' => $brandName,'brand_image' => $imagename,]);
     
    
@@ -280,6 +280,64 @@ public function show_brand(){
 }
 // end show brand  //
 
+
+
+// start update brand  //
+
+public function update_brand($id){
+    $brand=brand::find($id);
+    return view('admin.update_brand',compact('brand'));
+}
+
+
+public function update_brand_confirm(Request $request,$id){
+
+  
+    $brand = DB::table('brands')->find($id);
+    $brandName = $request->input('brand_name');
+
+    DB::table('brands')->where('id', $id)->update(['brand_name' => $brandName]);
+
+    if ($request->hasFile('brand_image')) {
+        $image = $request->file('brand_image');
+
+
+       
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+        $request->brand_image->move('images/brand_image',$imagename);
+      
+        DB::table('brands')->where('id', $id)->update(['brand_image' => $imagename]);
+
+        if ($brand->brand_image) {
+            Storage::disk('public')->delete($brand->brand_image);
+        }
+
+        return redirect('show_brand')->with('message','brand updated Succesfully');
+
+
+
+    }else{
+        return redirect('show_brand')->with('message','brand updated Succesfully');
+    }
+
+
+
+
+}
+
+// end update brand  //
+
+
+// start delete brand  //
+
+public function delete_brand($id){
+    $brand=brand::find($id);
+    $brand->delete();
+    return redirect()->back()->with('message','brand Deleted Succesfully');
+ }
+
+
+// end delete brand  //
 
 
 

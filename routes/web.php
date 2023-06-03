@@ -50,6 +50,11 @@ Route::post('/add_brand',[AdminController::class,'add_brand']);
 
 Route::get('/show_brand',[AdminController::class,'show_brand']);
 
+Route::get('/update_brand/{id}',[AdminController::class,'update_brand']);
+
+Route::post('/update_brand_confirm/{id}',[AdminController::class,'update_brand_confirm']);
+
+Route::get('/delete_brand/{id}',[AdminController::class,'delete_brand']);
 
 
 
