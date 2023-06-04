@@ -24,76 +24,41 @@
             
 
             <!-- Category -->
+            
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Categories section</span></li>
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Category</div>
+              <a href="{{url('show_category')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Category</div>
               </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{{url('category')}}" class="menu-link">
-                    <div data-i18n="Without menu">Add Category</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="{{url('show_category')}}" class="menu-link">
-                    <div data-i18n="Without navbar">View Category</div>
-                  </a>
-                </li>
-               
-              </ul>
             </li>
 
               <!-- Product -->
               <li class="menu-header small text-uppercase"><span class="menu-header-text">Product section</span></li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Product</div>
+              <li class="menu-item">
+              <a href="" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Product</div>
               </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Add Product</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">View Product</div>
-                  </a>
-                </li>
-               
-              </ul>
             </li>
 
-              <!-- Product -->
+              <!-- Brand -->
               <li class="menu-header small text-uppercase"><span class="menu-header-text">Brand section</span></li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Brand</div>
+              <li class="menu-item">
+              <a href="{{url('show_brand')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Brand</div>
               </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{{url('brand')}}" class="menu-link">
-                    <div data-i18n="Without menu">Add brand</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="{{url('show_brand')}}" class="menu-link">
-                    <div data-i18n="Without navbar">View brand</div>
-                  </a>
-                </li>
-               
-              </ul>
             </li>
 
            
+           
+
+            
 
           </ul>
+
+
+          
           
         </aside>

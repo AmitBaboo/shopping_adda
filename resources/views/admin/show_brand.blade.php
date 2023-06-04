@@ -37,6 +37,20 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
+
+            <div class="row">
+  <div class="col-12">
+  <div class="d-flex align-items-center justify-content-between">
+
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Brand /</span> View brands</h4>
+    
+      <a href="{{url('brand')}}" class="btn btn-outline-green">Add Brand</a>
+      </div>
+      </div>
+      </div>
+
+
+
             @if(session()->has('message'))
       <div class="alert alert-success">
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -46,7 +60,7 @@
           @endif
 
 
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Brand /</span> View brands</h4>
+          
 
 
 

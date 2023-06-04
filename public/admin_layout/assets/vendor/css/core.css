@@ -6378,6 +6378,26 @@ label.btn {
   color: #8592a3;
 }
 
+/* green buttton */
+
+.btn-outline-green {
+  color: #a6c76c;
+  border-color: #a6c76c;
+  background: transparent;
+}
+.btn-outline-green:hover {
+  color: #fff;
+  background-color: #a6c76c;
+  border-color: #a6c76c;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(133, 146, 163, 0.4);
+  transform: translateY(-1px);
+}
+
+
+/* green buttton */
+
+
+
 .btn-success {
   color: #fff;
   background-color: #71dd37;
