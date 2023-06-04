@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\sub_category;
 use App\Models\brand;
+use App\Models\size;
+use App\Models\color;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -341,6 +343,125 @@ public function delete_brand($id){
 
 
 
+
+
+
+// start size  //
+
+public function show_size(){
+    $size=size::all();
+    return view('admin.show_size',compact('size'));
+}
+
+
+public function size(){
+    return view('admin.size');
+}
+
+
+
+
+
+public function add_size(Request $request)
+{
+    $sizename = $request->input('size');
+
+    $existingsize= DB::table('sizes')
+        ->where('size', $sizename)
+        ->first();
+
+    if ($existingsize) {
+        return redirect()->back()->with('message','Size already exists.');
+    }
+
+    DB::table('sizes')->insert(['size' => $sizename]);
+    
+    return redirect('show_size')->with('message','size Added Succesfully');
+}
+
+
+public function update_size($id){
+    $size=size::find($id);
+    return view('admin.update_size',compact('size'));
+}
+
+
+public function update_size_confirm(Request $request,$id){
+    $size=size::find($id);
+    $size->size=$request->size;
+    $size->save();
+    return redirect('show_size')->with('message','Size Updated Seccessfully');
+}
+
+public function delete_size($id){
+    $size=size::find($id);
+    $size->delete();
+    return redirect()->back()->with('message','Size Deleted Succesfully');
+ }
+
+
+// end size  //
+
+
+
+// start color  //
+
+
+public function show_color(){
+    $color=color::all();
+    return view('admin.show_color',compact('color'));
+}
+
+
+public function color(){
+    return view('admin.color');
+}
+
+
+public function add_color(Request $request)
+{
+    $colorname = $request->input('color');
+
+    $existingcolor= DB::table('colors')
+        ->where('color', $colorname)
+        ->first();
+
+    if ($existingcolor) {
+        return redirect()->back()->with('message','Color already exists.');
+    }
+
+    DB::table('colors')->insert(['color' => $colorname]);
+    
+    return redirect('show_color')->with('message','Color Added Succesfully');
+}
+
+
+public function update_color($id){
+    $color=color::find($id);
+    return view('admin.update_color',compact('color'));
+}
+
+
+public function update_color_confirm(Request $request,$id){
+    $color=color::find($id);
+    $color->color=$request->color;
+    $color->save();
+    return redirect('show_color')->with('message','Color Updated Seccessfully');
+}
+
+public function delete_color($id){
+    $color=color::find($id);
+    $color->delete();
+    return redirect()->back()->with('message','Color Deleted Succesfully');
+ }
+
+
+
+
+
+
+
+// end color  //
 
 
 }

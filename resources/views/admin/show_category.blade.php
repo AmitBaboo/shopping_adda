@@ -64,10 +64,11 @@
               <div class="card">
                 <h5 class="card-header">Sub Categories</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table css-serial">
 
                     <thead>
                       <tr>
+                        <th>#</th>
                         <th>sub Category name</th>
                         <th>main category</th>
                         <th>Actions</th>
@@ -77,6 +78,7 @@
                     <tbody class="table-border-bottom-0">
                       @foreach($sub_category as $sub_category)
                       <tr>
+                        <td></td>
                         <td> <strong>{{$sub_category->sub_category_name}}</strong></td>
                         <td>{{$sub_category->category_name}}</td>
                       
@@ -111,10 +113,11 @@
                 <div class="card">
                 <h5 class="card-header">Categories</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table css-serial">
 
                     <thead>
                       <tr>
+                        <th>#</th>
                         <th>Category name</th>
                         <th>Actions</th>
                       </tr>
@@ -123,6 +126,7 @@
                     <tbody class="table-border-bottom-0">
                       @foreach($category as $category)
                       <tr>
+                        <td></td>
                         <td> <strong>{{$category->category_name}}</strong></td>
                         <td>
                           <div class="dropdown">

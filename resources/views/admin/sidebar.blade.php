@@ -25,7 +25,7 @@
 
             <!-- Category -->
             
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Categories section</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">multi added section</span></li>
             <li class="menu-item">
               <a href="{{url('show_category')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -34,7 +34,6 @@
             </li>
 
               <!-- Product -->
-              <li class="menu-header small text-uppercase"><span class="menu-header-text">Product section</span></li>
               <li class="menu-item">
               <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -43,11 +42,25 @@
             </li>
 
               <!-- Brand -->
-              <li class="menu-header small text-uppercase"><span class="menu-header-text">Brand section</span></li>
+              <li class="menu-header small text-uppercase"><span class="menu-header-text">extra section</span></li>
               <li class="menu-item">
               <a href="{{url('show_brand')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Brand</div>
+              </a>
+            </li>
+             <!-- size -->
+            <li class="menu-item">
+              <a href="{{url('show_size')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Size</div>
+              </a>
+            </li>
+             <!-- size -->
+            <li class="menu-item">
+              <a href="{{url('show_color')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Color</div>
               </a>
             </li>
 

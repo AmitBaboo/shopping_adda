@@ -60,6 +60,37 @@ Route::get('/delete_brand/{id}',[AdminController::class,'delete_brand']);
 
 
 
+Route::get('/show_size',[AdminController::class,'show_size']);
+
+Route::get('/size',[AdminController::class,'size']);
+
+Route::post('/add_size',[AdminController::class,'add_size']);
+
+Route::get('/update_size/{id}',[AdminController::class,'update_size']);
+
+Route::post('/update_size_confirm/{id}',[AdminController::class,'update_size_confirm']);
+
+Route::get('/delete_size/{id}',[AdminController::class,'delete_size']);
+
+
+
+
+
+
+Route::get('/show_color',[AdminController::class,'show_color']);
+
+Route::get('/color',[AdminController::class,'color']);
+
+Route::post('/add_color',[AdminController::class,'add_color']);
+
+Route::get('/update_color/{id}',[AdminController::class,'update_color']);
+
+Route::post('/update_color_confirm/{id}',[AdminController::class,'update_color_confirm']);
+
+Route::get('/delete_color/{id}',[AdminController::class,'delete_color']);
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

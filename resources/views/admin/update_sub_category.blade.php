@@ -39,15 +39,28 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sub Category /</span> Update Sub Category</h4>
+            <div class="row">
+  <div class="col-12">
+  <div class="d-flex align-items-center justify-content-between">
 
-            @if(session()->has('message'))
-      <div class="alert alert-success">
-<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-
-        {{session()->get('message')}}
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> update SUb Category</h4>
+    
+      <a href="{{url('show_category')}}" class="btn btn-outline-green">back</a>
       </div>
-          @endif
+      </div>
+      </div>
+
+
+        
+      @if(session()->has('message'))
+      <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      {{session()->get('message')}}
+      </div>
+      @endif
+
+
+      
 
 
 
@@ -57,7 +70,6 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">update Sub Category</h5>
                       
                     </div>
                     <div class="card-body">
@@ -81,7 +93,7 @@
                           <label class="form-label" for="basic-default-fullname">Sub Category Name</label>
                           <input type="text" name="sub_category" class="form-control" id="basic-default-fullname" placeholder="Write here" required="" value="{{$sub_category->sub_category_name}}"/>
                         </div>   
-                        <button type="submit" class="btn btn-outline-secondary">update</button>
+                        <button type="submit" class="btn btn-outline-green">update</button>
                       </form>
                     </div>
                   </div>

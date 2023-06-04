@@ -13,7 +13,7 @@
   <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <title>Brand</title>
+    <title>Size</title>
   @include('admin.head')
   </head>
 
@@ -44,15 +44,15 @@
   <div class="col-12">
   <div class="d-flex align-items-center justify-content-between">
 
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Brand /</span> Add Brand</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Size /</span> Add Size</h4>
     
-      <a href="{{url('show_brand')}}" class="btn btn-outline-green">back</a>
+      <a href="{{url('show_size')}}" class="btn btn-outline-green">back</a>
       </div>
       </div>
       </div>
 
 
-    
+        
       @if(session()->has('message'))
       <div class="alert alert-success alert-dismissible" role="alert">
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,28 +61,25 @@
       @endif
       
 
+  
+
 
            
             <div class="row">
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Create New Brand</h5>
+                     
                       
                     </div>
                     <div class="card-body">
-                      <form action="{{url('/add_brand')}}" method="POST" enctype="multipart/form-data">
+                      <form action="{{url('/add_size')}}" method="POST">
                       @csrf
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Brand Name</label>
-                          <input type="text" name="brand_name" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
+                          <input type="text" name="size" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
                         </div> 
                         
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Brand Image</label>
-                          <input type="file" name="brand_image" class="form-control" id="basic-default-fullname"  required=""/>
-                        </div>
-                        
+            
 
 
                         <button type="submit" class="btn btn-outline-green">Add</button>

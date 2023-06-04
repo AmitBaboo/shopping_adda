@@ -54,7 +54,14 @@
           
 
 
-
+  
+      @if(session()->has('message'))
+      <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      {{session()->get('message')}}
+      </div>
+      @endif
+      
 
 
           
@@ -86,7 +93,7 @@
                           <label class="form-label" for="basic-default-fullname">Sub Category Name</label>
                           <input type="text" name="sub_category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
                         </div>   
-                        <button type="submit" class="btn btn-outline-secondary">Add</button>
+                        <button type="submit" class="btn btn-outline-green">Add</button>
                       </form>
                     </div>
                   </div>
@@ -119,7 +126,7 @@
                           <label class="form-label" for="basic-default-fullname">Category Name</label>
                           <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" required=""/>
                         </div>   
-                        <button type="submit" class="btn btn-outline-secondary">Add</button>
+                        <button type="submit" class="btn btn-outline-green">Add</button>
                       </form>
                     </div>
                   </div>

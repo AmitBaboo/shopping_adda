@@ -13,7 +13,7 @@
   <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <title>View Brand</title>
+    <title>Color</title>
   @include('admin.head')
   </head>
 
@@ -43,9 +43,9 @@
   <div class="col-12">
   <div class="d-flex align-items-center justify-content-between">
 
-  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Brand /</span> View brands</h4>
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Color /</span> View Color</h4>
     
-      <a href="{{url('brand')}}" class="btn btn-outline-green">Add Brand</a>
+      <a href="{{url('color')}}" class="btn btn-outline-green">Add Color</a>
       </div>
       </div>
       </div>
@@ -76,20 +76,22 @@
                   <table class="table css-serial">
 
                     <thead>
+
+                     
                       <tr>
-                        <th>#</th>
-                        <th>Brand name</th>
-                        <th>image</th>
+                       <th>#</th>
+                        <th>color</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
 
                     <tbody class="table-border-bottom-0">
-                    @foreach($brand as $brand)
+                    @foreach($color as $color)
                       <tr>
-                        <td></td>
-                        <td> <strong>{{$brand->brand_name}}</strong></td>
-                        <td> <img style="width:150px;" src="/images/brand_image/{{$brand->brand_image}}" alt="brand_image"></td>
+
+                         <td></td>
+                        <td> <strong>{{$color->color}}</strong></td>
+                      
                         
                         <td>
                         
@@ -98,15 +100,15 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{url('update_brand',$brand->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href="{{url('delete_brand',$brand->id)}}"onclick="return confirm('Are You Sure To Delete This Brand')">
+                              <a class="dropdown-item" href="{{url('update_color',$color->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <a class="dropdown-item" href="{{url('delete_color',$color->id)}}"onclick="return confirm('Are You Sure To Delete This Color')">
                                 <i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
-                        @endforeach
+                       
                       </tr>
-                      
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

@@ -39,15 +39,28 @@
             <!-- Content -->       
             <div class="container-xxl flex-grow-1 container-p-y" style="text-transform: uppercase;">
 
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> Edit Category</h4>
+            
+            <div class="row">
+  <div class="col-12">
+  <div class="d-flex align-items-center justify-content-between">
 
-            @if(session()->has('message'))
-      <div class="alert alert-success">
-<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-
-        {{session()->get('message')}}
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Category /</span> update Category</h4>
+    
+      <a href="{{url('show_category')}}" class="btn btn-outline-green">back</a>
       </div>
-          @endif
+      </div>
+      </div>
+
+
+        
+      @if(session()->has('message'))
+      <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      {{session()->get('message')}}
+      </div>
+      @endif
+
+
 
 
 
@@ -77,7 +90,7 @@
                           <label class="form-label" for="basic-default-fullname">Category Name</label>
                           <input type="text" name="category" class="form-control" id="basic-default-fullname" placeholder="Write here" required="" value="{{$category->category_name}}" />
                         </div>   
-                        <button type="submit" class="btn btn-outline-secondary">Update</button>
+                        <button type="submit" class="btn btn-outline-green">Update</button>
                       </form>
                     </div>
                   </div>
